@@ -1,0 +1,9 @@
+/bin
+/obj
+*.user
+.vs/
+*.pfx
+packages/
+Servicio/
+Entidades/DetSolCompra.cs
+Entidades/Ventas.cs
