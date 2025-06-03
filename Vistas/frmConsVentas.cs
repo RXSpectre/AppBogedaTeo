@@ -23,6 +23,8 @@ namespace AppBogedaTeo
         private BindingSource bsMetodoPago;
         private List<Parametro> listMetodoPago;
 
+      
+
         public frmConsVentas(Form form, string cadenaConexion)
         {
             InitializeComponent();
@@ -62,6 +64,8 @@ namespace AppBogedaTeo
             }
             else
                 _instance.BringToFront();
+
+            _instance.LimpiarCampos();
 
             return _instance;
         }
@@ -122,12 +126,14 @@ namespace AppBogedaTeo
                     Alerta.Notificacion("No hay registros", MessageBoxIcon.Information);
                     //txtSumImp.Text = "0";
                     bsVentas.DataSource = null;
-                    dgvOrdenPedido.DataSource = bsVentas;
+                    dgvOrdenPedido.DataSource = null;
                 }
                     
 
                 bsVentas.DataSource = ventas;
                 dgvOrdenPedido.DataSource = bsVentas;
+
+              
                 //txtSumImp.Text = sumatoriaImportes.ToString();
             }
             catch (Exception ex)
@@ -138,6 +144,12 @@ namespace AppBogedaTeo
 
         private void LimpiarCampos()
         {
+
+            //Búsqueda
+            txtNroDoc.Text = "";
+            txtRazonSocial.Text = "";
+      
+            //Detalle
             txtDetCodVenta.Text = "";
             txtDetNroDoc.Text = "";
             txtDetNomCompletos.Text = "";
@@ -145,10 +157,10 @@ namespace AppBogedaTeo
             txtDetFechaCreacion.Text = "";
             txtDetFechaLimite.Text = "";
             //txtSumImp.Text = "0";
+            bsVentas.DataSource = null;
             dgvOrdenPedido.DataSource = null;
             dgvDetVentas.DataSource = null;
 
-            
             panelBus.Visible = true;
             panelBus.Dock = DockStyle.Fill;
             panelDetalle.Visible = false;

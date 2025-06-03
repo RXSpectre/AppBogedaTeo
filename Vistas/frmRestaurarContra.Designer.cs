@@ -80,7 +80,7 @@ namespace AppBogedaTeo.Vistas
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(206, 34);
             this.btnRestaurar.TabIndex = 51;
-            this.btnRestaurar.Text = "Restaurar Contraseña";
+            this.btnRestaurar.Text = "Restaurar";
             this.btnRestaurar.UseVisualStyleBackColor = false;
             this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
             // 
@@ -210,6 +210,7 @@ namespace AppBogedaTeo.Vistas
             this.Name = "frmRestaurarContra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRestaurarContra";
+        
             this.panelCodVeri.ResumeLayout(false);
             this.panelCodVeri.PerformLayout();
             this.ResumeLayout(false);

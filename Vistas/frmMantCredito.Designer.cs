@@ -97,7 +97,7 @@ namespace AppBogedaTeo.Vistas
             this.btnModificarHPC.Name = "btnModificarHPC";
             this.btnModificarHPC.Size = new System.Drawing.Size(249, 34);
             this.btnModificarHPC.TabIndex = 52;
-            this.btnModificarHPC.Text = "Modificar Historial de Pagos";
+            this.btnModificarHPC.Text = "Seleccionar";
             this.btnModificarHPC.UseVisualStyleBackColor = false;
             this.btnModificarHPC.Click += new System.EventHandler(this.btnModificarHPC_Click);
             // 
@@ -110,7 +110,7 @@ namespace AppBogedaTeo.Vistas
             this.btnCrearHPC.Name = "btnCrearHPC";
             this.btnCrearHPC.Size = new System.Drawing.Size(249, 34);
             this.btnCrearHPC.TabIndex = 51;
-            this.btnCrearHPC.Text = "Creación Historial de Pagos";
+            this.btnCrearHPC.Text = "Creacion Historial de Pagos";
             this.btnCrearHPC.UseVisualStyleBackColor = false;
             this.btnCrearHPC.Click += new System.EventHandler(this.btnCrearHPC_Click);
             // 
@@ -143,7 +143,7 @@ namespace AppBogedaTeo.Vistas
             this.txtBusNroDoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBusNroDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusNroDoc.Location = new System.Drawing.Point(21, 83);
-            this.txtBusNroDoc.MaxLength = 11;
+            this.txtBusNroDoc.MaxLength = 8;
             this.txtBusNroDoc.Name = "txtBusNroDoc";
             this.txtBusNroDoc.Size = new System.Drawing.Size(268, 24);
             this.txtBusNroDoc.TabIndex = 41;
@@ -182,9 +182,9 @@ namespace AppBogedaTeo.Vistas
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(17, 126);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(260, 24);
+            this.label8.Size = new System.Drawing.Size(179, 24);
             this.label8.TabIndex = 39;
-            this.label8.Text = "Historial de Pagos Clientes";
+            this.label8.Text = "Historial de Pagos";
             // 
             // panelCreacion
             // 
@@ -319,9 +319,9 @@ namespace AppBogedaTeo.Vistas
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(10, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(303, 24);
+            this.label6.Size = new System.Drawing.Size(284, 24);
             this.label6.TabIndex = 45;
-            this.label6.Text = "Modificación Historial de Pagos";
+            this.label6.Text = "Detalle del Historial de Pagos";
             // 
             // button5
             // 

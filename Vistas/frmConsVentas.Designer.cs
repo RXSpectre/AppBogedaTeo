@@ -451,6 +451,7 @@ namespace AppBogedaTeo
             this.dgvOrdenPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvOrdenPedido.Size = new System.Drawing.Size(1041, 95);
             this.dgvOrdenPedido.TabIndex = 54;
+         
             // 
             // btnBuscarHPC
             // 

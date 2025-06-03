@@ -158,7 +158,7 @@ namespace AppBogedaTeo.Vistas
                 clienteFiltro.Nombres = txtBusNombres.Text.Trim();
                 clienteFiltro.Apellidos = txtBusApellidos.Text.Trim();
                 clienteFiltro.CodEstadoCliente = (int)cmbBusEstado.SelectedValue;
-                List<ClienteDTO> empleados = repoCliente.BuscarCliente(clienteFiltro);
+                dgvClientes.DataSource = null;
 
                 if (clienteFiltro.Nro_Doc.Length > 0 && clienteFiltro.Nro_Doc.Length < 8)
                 {
@@ -166,12 +166,11 @@ namespace AppBogedaTeo.Vistas
                     return;
                 }
 
+                List<ClienteDTO> empleados = repoCliente.BuscarCliente(clienteFiltro);
 
                 if (empleados.Count == 0)
                 {
                     Alerta.Notificacion("No hay registros", MessageBoxIcon.Information);
-                    bsCliente.DataSource = null;
-                    dgvClientes.DataSource = bsCliente;
                     return;
                 }
                     

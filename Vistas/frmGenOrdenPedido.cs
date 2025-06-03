@@ -88,6 +88,8 @@ namespace AppBogedaTeo.Vistas
                 //Solo buscamos a clientes que no son inhabilitados
                 clienteFiltro.FMant = 'G';
 
+                dgvClientes.DataSource = null;
+
                 if (clienteFiltro.Nro_Doc.Length > 0 && clienteFiltro.Nro_Doc.Length < 8)
                 {
                     Alerta.Notificacion("Ingrese un DNI válido", MessageBoxIcon.Information);
@@ -96,8 +98,10 @@ namespace AppBogedaTeo.Vistas
 
                 List<ClienteOrdenPedidoDTO> clientes = repoCliente.BuscarCliente(clienteFiltro);
                
-                if (clientes.Count == 0)
+                if (clientes.Count == 0) {
                     Alerta.Notificacion("No hay registros", MessageBoxIcon.Information);
+                    return;
+                }
 
                 bsCliente.DataSource = clientes;
                 dgvClientes.DataSource = bsCliente;

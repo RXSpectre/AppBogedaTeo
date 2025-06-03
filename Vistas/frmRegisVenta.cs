@@ -133,18 +133,25 @@ namespace AppBogedaTeo.Vistas
                 int nroOrdenPedido = Int32.TryParse(txtBusNroOP.Text.Trim(), out _) ? Convert.ToInt32(txtBusNroOP.Text.Trim()) : 0;
                 string nroDoc = Int32.TryParse(txtBusNroDoc.Text.Trim(), out _) ? txtBusNroDoc.Text.Trim() : "";
 
+                //Limpiamos grilla
+                bsOrdenPedido.DataSource = null;
+
+                if (nroDoc.Length > 0 && nroDoc.Length < 8)
+                {
+                    Alerta.Notificacion("Ingrese un DNI válido", MessageBoxIcon.Information);
+                    return;
+                }
+
                 ordPedidoFiltro.Nro_Orden = nroOrdenPedido;
-                ordPedidoFiltro.Nro_Doc = txtBusNroDoc.Text.Trim();
+                ordPedidoFiltro.Nro_Doc = nroDoc;
                 ordPedidoFiltro.Fmod = 1;
                 List<OrdenPedidoDTO> ordenPedidos = repoOrdenPedido.ObtenerOrdenPedido(ordPedidoFiltro);
                 if (ordenPedidos.Count == 0)
                 {
                     Alerta.Notificacion("No hay registros", MessageBoxIcon.Information);
-                    bsOrdenPedido.DataSource = null;
-                    dgvOrdenPedido.DataSource = bsOrdenPedido;
+                    return;
                 }
                     
-
                 bsOrdenPedido.DataSource = ordenPedidos;
                 dgvOrdenPedido.DataSource = bsOrdenPedido;
             }
@@ -225,9 +232,10 @@ namespace AppBogedaTeo.Vistas
 
                 Alerta.Notificacion(response.MsgRespuesta, MessageBoxIcon.Information);
 
+                LimpiarCampos();
                 BuscarOrdenPedido();
                 PanelPrincipal();
-                LimpiarCampos();
+               
             }
             catch (Exception ex)
             {

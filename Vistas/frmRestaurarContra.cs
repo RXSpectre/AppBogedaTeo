@@ -203,5 +203,7 @@ namespace AppBogedaTeo.Vistas
         {
             ValidarCodigoVerificacion();
         }
+
+       
     }
 }
