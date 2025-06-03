@@ -110,7 +110,7 @@ namespace AppBogedaTeo.Vistas
             this.btnCrearHPC.Name = "btnCrearHPC";
             this.btnCrearHPC.Size = new System.Drawing.Size(249, 34);
             this.btnCrearHPC.TabIndex = 51;
-            this.btnCrearHPC.Text = "Creacion Historial de Pagos";
+            this.btnCrearHPC.Text = "Creación Historial de Pagos";
             this.btnCrearHPC.UseVisualStyleBackColor = false;
             this.btnCrearHPC.Click += new System.EventHandler(this.btnCrearHPC_Click);
             // 
