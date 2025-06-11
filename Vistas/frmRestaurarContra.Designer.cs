@@ -50,11 +50,11 @@ namespace AppBogedaTeo.Vistas
             this.btnValidarCodVerificación.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnValidarCodVerificación.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValidarCodVerificación.ForeColor = System.Drawing.Color.White;
-            this.btnValidarCodVerificación.Location = new System.Drawing.Point(272, 267);
+            this.btnValidarCodVerificación.Location = new System.Drawing.Point(393, 274);
             this.btnValidarCodVerificación.Name = "btnValidarCodVerificación";
-            this.btnValidarCodVerificación.Size = new System.Drawing.Size(266, 34);
+            this.btnValidarCodVerificación.Size = new System.Drawing.Size(318, 34);
             this.btnValidarCodVerificación.TabIndex = 53;
-            this.btnValidarCodVerificación.Text = "Validar Código Verificación";
+            this.btnValidarCodVerificación.Text = "Restaurar ";
             this.btnValidarCodVerificación.UseVisualStyleBackColor = false;
             this.btnValidarCodVerificación.Click += new System.EventHandler(this.btnValidarCodVerificación_Click);
             // 
@@ -63,7 +63,7 @@ namespace AppBogedaTeo.Vistas
             this.btnVolver.BackColor = System.Drawing.Color.DarkCyan;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(544, 267);
+            this.btnVolver.Location = new System.Drawing.Point(280, 331);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(206, 34);
             this.btnVolver.TabIndex = 52;
@@ -76,11 +76,11 @@ namespace AppBogedaTeo.Vistas
             this.btnRestaurar.BackColor = System.Drawing.Color.ForestGreen;
             this.btnRestaurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRestaurar.ForeColor = System.Drawing.Color.White;
-            this.btnRestaurar.Location = new System.Drawing.Point(59, 267);
+            this.btnRestaurar.Location = new System.Drawing.Point(71, 274);
             this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(206, 34);
+            this.btnRestaurar.Size = new System.Drawing.Size(316, 34);
             this.btnRestaurar.TabIndex = 51;
-            this.btnRestaurar.Text = "Restaurar";
+            this.btnRestaurar.Text = "Enviar Código al Correo";
             this.btnRestaurar.UseVisualStyleBackColor = false;
             this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
             // 
@@ -121,6 +121,7 @@ namespace AppBogedaTeo.Vistas
             this.txtCodVeri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodVeri.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodVeri.Location = new System.Drawing.Point(19, 56);
+            this.txtCodVeri.MaxLength = 4;
             this.txtCodVeri.Name = "txtCodVeri";
             this.txtCodVeri.Size = new System.Drawing.Size(357, 24);
             this.txtCodVeri.TabIndex = 23;
@@ -195,7 +196,7 @@ namespace AppBogedaTeo.Vistas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(815, 325);
+            this.ClientSize = new System.Drawing.Size(882, 377);
             this.Controls.Add(this.btnValidarCodVerificación);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnRestaurar);
@@ -210,7 +211,6 @@ namespace AppBogedaTeo.Vistas
             this.Name = "frmRestaurarContra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRestaurarContra";
-        
             this.panelCodVeri.ResumeLayout(false);
             this.panelCodVeri.PerformLayout();
             this.ResumeLayout(false);
