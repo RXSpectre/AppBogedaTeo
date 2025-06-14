@@ -48,9 +48,7 @@ namespace AppBogedaTeo
             this.label4 = new System.Windows.Forms.Label();
             this.txtDetFechaCreacion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtDetFechaLimite = new System.Windows.Forms.TextBox();
             this.txtDetCodVenta = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.txtDetNomCompletos = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -246,9 +244,7 @@ namespace AppBogedaTeo
             this.panelCabecera.Controls.Add(this.label4);
             this.panelCabecera.Controls.Add(this.txtDetFechaCreacion);
             this.panelCabecera.Controls.Add(this.label5);
-            this.panelCabecera.Controls.Add(this.txtDetFechaLimite);
             this.panelCabecera.Controls.Add(this.txtDetCodVenta);
-            this.panelCabecera.Controls.Add(this.label19);
             this.panelCabecera.Controls.Add(this.txtDetNomCompletos);
             this.panelCabecera.Controls.Add(this.label15);
             this.panelCabecera.Controls.Add(this.label6);
@@ -314,16 +310,6 @@ namespace AppBogedaTeo
             this.label5.TabIndex = 64;
             this.label5.Text = "Código Venta:";
             // 
-            // txtDetFechaLimite
-            // 
-            this.txtDetFechaLimite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDetFechaLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetFechaLimite.Location = new System.Drawing.Point(530, 129);
-            this.txtDetFechaLimite.Name = "txtDetFechaLimite";
-            this.txtDetFechaLimite.ReadOnly = true;
-            this.txtDetFechaLimite.Size = new System.Drawing.Size(392, 24);
-            this.txtDetFechaLimite.TabIndex = 78;
-            // 
             // txtDetCodVenta
             // 
             this.txtDetCodVenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -333,17 +319,6 @@ namespace AppBogedaTeo
             this.txtDetCodVenta.ReadOnly = true;
             this.txtDetCodVenta.Size = new System.Drawing.Size(421, 24);
             this.txtDetCodVenta.TabIndex = 63;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(528, 102);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(209, 24);
-            this.label19.TabIndex = 77;
-            this.label19.Text = "Fecha Limite de Pago : ";
             // 
             // txtDetNomCompletos
             // 
@@ -382,7 +357,7 @@ namespace AppBogedaTeo
             // 
             this.txtDetEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDetEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetEstado.Location = new System.Drawing.Point(532, 183);
+            this.txtDetEstado.Location = new System.Drawing.Point(532, 129);
             this.txtDetEstado.Name = "txtDetEstado";
             this.txtDetEstado.ReadOnly = true;
             this.txtDetEstado.Size = new System.Drawing.Size(392, 24);
@@ -393,7 +368,7 @@ namespace AppBogedaTeo
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(528, 156);
+            this.label8.Location = new System.Drawing.Point(528, 102);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 24);
             this.label8.TabIndex = 69;
@@ -451,7 +426,6 @@ namespace AppBogedaTeo
             this.dgvOrdenPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvOrdenPedido.Size = new System.Drawing.Size(1041, 95);
             this.dgvOrdenPedido.TabIndex = 54;
-         
             // 
             // btnBuscarHPC
             // 
@@ -639,9 +613,7 @@ namespace AppBogedaTeo
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDetFechaCreacion;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtDetFechaLimite;
         private System.Windows.Forms.TextBox txtDetCodVenta;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtDetNomCompletos;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label6;

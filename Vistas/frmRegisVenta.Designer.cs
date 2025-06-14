@@ -30,7 +30,6 @@ namespace AppBogedaTeo.Vistas
         private void InitializeComponent()
         {
             this.panelBus = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
             this.btnGenerarOrdenPedido = new System.Windows.Forms.Button();
             this.txtBusNroOP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +41,8 @@ namespace AppBogedaTeo.Vistas
             this.label8 = new System.Windows.Forms.Label();
             this.panelDetOP = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cmbTipoComprobante = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -59,6 +59,8 @@ namespace AppBogedaTeo.Vistas
             this.txtImpTotalOP = new System.Windows.Forms.TextBox();
             this.dgvDetOP = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbMetodoPago = new System.Windows.Forms.ComboBox();
             this.panelBus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenPedido)).BeginInit();
             this.panelDetOP.SuspendLayout();
@@ -72,7 +74,6 @@ namespace AppBogedaTeo.Vistas
             // 
             this.panelBus.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panelBus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelBus.Controls.Add(this.label16);
             this.panelBus.Controls.Add(this.btnGenerarOrdenPedido);
             this.panelBus.Controls.Add(this.txtBusNroOP);
             this.panelBus.Controls.Add(this.label2);
@@ -87,17 +88,6 @@ namespace AppBogedaTeo.Vistas
             this.panelBus.Name = "panelBus";
             this.panelBus.Size = new System.Drawing.Size(1094, 285);
             this.panelBus.TabIndex = 1;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Yellow;
-            this.label16.Location = new System.Drawing.Point(216, 131);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(343, 24);
-            this.label16.TabIndex = 70;
-            this.label16.Text = "*(Estado : Preventa y Pago Por Crédito )";
             // 
             // btnGenerarOrdenPedido
             // 
@@ -216,30 +206,47 @@ namespace AppBogedaTeo.Vistas
             this.panelDetOP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetOP.Location = new System.Drawing.Point(0, 285);
             this.panelDetOP.Name = "panelDetOP";
-            this.panelDetOP.Size = new System.Drawing.Size(1094, 620);
+            this.panelDetOP.Size = new System.Drawing.Size(1094, 653);
             this.panelDetOP.TabIndex = 2;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.cmbTipoComprobante);
+            this.panel3.Controls.Add(this.cmbMetodoPago);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.btnConfirmar);
             this.panel3.Controls.Add(this.btnCancelar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 481);
+            this.panel3.Location = new System.Drawing.Point(0, 461);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1090, 135);
+            this.panel3.Size = new System.Drawing.Size(1090, 188);
             this.panel3.TabIndex = 60;
             // 
-            // cmbTipoComprobante
+            // button1
             // 
-            this.cmbTipoComprobante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cmbTipoComprobante.Enabled = false;
-            this.cmbTipoComprobante.FormattingEnabled = true;
-            this.cmbTipoComprobante.Location = new System.Drawing.Point(221, 30);
-            this.cmbTipoComprobante.Name = "cmbTipoComprobante";
-            this.cmbTipoComprobante.Size = new System.Drawing.Size(349, 21);
-            this.cmbTipoComprobante.TabIndex = 53;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(433, 146);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 32);
+            this.button1.TabIndex = 59;
+            this.button1.Text = "Anular";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(254, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(360, 24);
+            this.textBox1.TabIndex = 58;
+            this.textBox1.Text = "Boleta";
             // 
             // label3
             // 
@@ -257,7 +264,7 @@ namespace AppBogedaTeo.Vistas
             this.btnConfirmar.BackColor = System.Drawing.Color.Crimson;
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmar.Location = new System.Drawing.Point(318, 93);
+            this.btnConfirmar.Location = new System.Drawing.Point(304, 146);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(123, 32);
             this.btnConfirmar.TabIndex = 50;
@@ -270,7 +277,7 @@ namespace AppBogedaTeo.Vistas
             this.btnCancelar.BackColor = System.Drawing.Color.MediumBlue;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(447, 93);
+            this.btnCancelar.Location = new System.Drawing.Point(562, 146);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(123, 32);
             this.btnCancelar.TabIndex = 51;
@@ -376,7 +383,7 @@ namespace AppBogedaTeo.Vistas
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1090, 616);
+            this.panel5.Size = new System.Drawing.Size(1090, 649);
             this.panel5.TabIndex = 58;
             // 
             // label9
@@ -394,7 +401,7 @@ namespace AppBogedaTeo.Vistas
             // 
             this.txtImpTotalOP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtImpTotalOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImpTotalOP.Location = new System.Drawing.Point(470, 446);
+            this.txtImpTotalOP.Location = new System.Drawing.Point(474, 431);
             this.txtImpTotalOP.Name = "txtImpTotalOP";
             this.txtImpTotalOP.ReadOnly = true;
             this.txtImpTotalOP.Size = new System.Drawing.Size(160, 24);
@@ -420,17 +427,38 @@ namespace AppBogedaTeo.Vistas
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(373, 446);
+            this.label12.Location = new System.Drawing.Point(377, 431);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 24);
             this.label12.TabIndex = 56;
             this.label12.Text = "Total";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(69, 76);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(154, 24);
+            this.label10.TabIndex = 60;
+            this.label10.Text = "Método de pago:";
+            // 
+            // cmbMetodoPago
+            // 
+            this.cmbMetodoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMetodoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMetodoPago.FormattingEnabled = true;
+            this.cmbMetodoPago.Location = new System.Drawing.Point(254, 74);
+            this.cmbMetodoPago.Name = "cmbMetodoPago";
+            this.cmbMetodoPago.Size = new System.Drawing.Size(360, 26);
+            this.cmbMetodoPago.TabIndex = 61;
+            // 
             // frmRegisVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 905);
+            this.ClientSize = new System.Drawing.Size(1094, 938);
             this.Controls.Add(this.panelDetOP);
             this.Controls.Add(this.panelBus);
             this.Name = "frmRegisVenta";
@@ -479,8 +507,10 @@ namespace AppBogedaTeo.Vistas
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox cmbTipoComprobante;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cmbMetodoPago;
     }
 }

@@ -43,7 +43,7 @@ namespace AppBogedaTeo.Util
                     ws.Cell(y, x++).Value = r.DscMetodoPago;
                     ws.Cell(y, x++).Value = r.DscEstado;
                     ws.Cell(y, x++).Value = r.FechaCreacion;
-                    ws.Cell(y, x++).Value = r.FechaLimitePago;
+                    //ws.Cell(y, x++).Value = r.FechaLimitePago;
                     ws.Cell(y, x++).Value = r.ImporteTotal.ToString();
                
                     y++;

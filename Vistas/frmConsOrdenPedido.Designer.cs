@@ -37,9 +37,6 @@ namespace AppBogedaTeo.Vistas
             this.dgvDetOP = new System.Windows.Forms.DataGridView();
             this.panelPie = new System.Windows.Forms.Panel();
             this.txtDetImpTotal = new System.Windows.Forms.TextBox();
-            this.panelAcciones = new System.Windows.Forms.Panel();
-            this.btnPreventa = new System.Windows.Forms.Button();
-            this.btnAnular = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.panelCabecera = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -76,7 +73,6 @@ namespace AppBogedaTeo.Vistas
             this.panelCuerpo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetOP)).BeginInit();
             this.panelPie.SuspendLayout();
-            this.panelAcciones.SuspendLayout();
             this.panelCabecera.SuspendLayout();
             this.panelBus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenPedido)).BeginInit();
@@ -162,7 +158,6 @@ namespace AppBogedaTeo.Vistas
             // 
             this.panelPie.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelPie.Controls.Add(this.txtDetImpTotal);
-            this.panelPie.Controls.Add(this.panelAcciones);
             this.panelPie.Controls.Add(this.label18);
             this.panelPie.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelPie.Location = new System.Drawing.Point(0, 502);
@@ -180,42 +175,6 @@ namespace AppBogedaTeo.Vistas
             this.txtDetImpTotal.Size = new System.Drawing.Size(218, 24);
             this.txtDetImpTotal.TabIndex = 61;
             this.txtDetImpTotal.Text = "0";
-            // 
-            // panelAcciones
-            // 
-            this.panelAcciones.Controls.Add(this.btnPreventa);
-            this.panelAcciones.Controls.Add(this.btnAnular);
-            this.panelAcciones.Location = new System.Drawing.Point(692, 26);
-            this.panelAcciones.Name = "panelAcciones";
-            this.panelAcciones.Size = new System.Drawing.Size(279, 79);
-            this.panelAcciones.TabIndex = 67;
-            this.panelAcciones.Visible = false;
-            // 
-            // btnPreventa
-            // 
-            this.btnPreventa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnPreventa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPreventa.ForeColor = System.Drawing.Color.White;
-            this.btnPreventa.Location = new System.Drawing.Point(3, 3);
-            this.btnPreventa.Name = "btnPreventa";
-            this.btnPreventa.Size = new System.Drawing.Size(257, 32);
-            this.btnPreventa.TabIndex = 65;
-            this.btnPreventa.Text = "Preventa";
-            this.btnPreventa.UseVisualStyleBackColor = false;
-            this.btnPreventa.Click += new System.EventHandler(this.btnPreventa_Click);
-            // 
-            // btnAnular
-            // 
-            this.btnAnular.BackColor = System.Drawing.Color.Indigo;
-            this.btnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnular.ForeColor = System.Drawing.Color.White;
-            this.btnAnular.Location = new System.Drawing.Point(3, 41);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(257, 32);
-            this.btnAnular.TabIndex = 66;
-            this.btnAnular.Text = "Anular";
-            this.btnAnular.UseVisualStyleBackColor = false;
-            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // label18
             // 
@@ -593,7 +552,6 @@ namespace AppBogedaTeo.Vistas
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetOP)).EndInit();
             this.panelPie.ResumeLayout(false);
             this.panelPie.PerformLayout();
-            this.panelAcciones.ResumeLayout(false);
             this.panelCabecera.ResumeLayout(false);
             this.panelCabecera.PerformLayout();
             this.panelBus.ResumeLayout(false);
@@ -620,9 +578,6 @@ namespace AppBogedaTeo.Vistas
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbEstadoOP;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnPreventa;
-        private System.Windows.Forms.Button btnAnular;
-        private System.Windows.Forms.Panel panelAcciones;
         private System.Windows.Forms.Panel panelBus;
         private System.Windows.Forms.Panel panelDetalle;
         private System.Windows.Forms.Label label4;

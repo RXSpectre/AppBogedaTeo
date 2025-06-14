@@ -52,8 +52,7 @@ namespace AppBogedaTeo.Vistas
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelDet = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnPreventa = new System.Windows.Forms.Button();
-            this.btnAnular = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGenerarOrdenPedido = new System.Windows.Forms.Button();
             this.txtImpTotalOP = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -62,9 +61,7 @@ namespace AppBogedaTeo.Vistas
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtNroOrdPOP = new System.Windows.Forms.TextBox();
             this.txtNroDocOP = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtRazonSocialOP = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
@@ -343,9 +340,7 @@ namespace AppBogedaTeo.Vistas
             this.panelDet.Controls.Add(this.label9);
             this.panelDet.Controls.Add(this.label4);
             this.panelDet.Controls.Add(this.label5);
-            this.panelDet.Controls.Add(this.txtNroOrdPOP);
             this.panelDet.Controls.Add(this.txtNroDocOP);
-            this.panelDet.Controls.Add(this.label7);
             this.panelDet.Controls.Add(this.label6);
             this.panelDet.Controls.Add(this.txtRazonSocialOP);
             this.panelDet.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -356,8 +351,7 @@ namespace AppBogedaTeo.Vistas
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.btnPreventa);
-            this.panel5.Controls.Add(this.btnAnular);
+            this.panel5.Controls.Add(this.btnCancelar);
             this.panel5.Controls.Add(this.btnGenerarOrdenPedido);
             this.panel5.Controls.Add(this.txtImpTotalOP);
             this.panel5.Controls.Add(this.label12);
@@ -367,38 +361,25 @@ namespace AppBogedaTeo.Vistas
             this.panel5.Size = new System.Drawing.Size(597, 152);
             this.panel5.TabIndex = 58;
             // 
-            // btnPreventa
+            // btnCancelar
             // 
-            this.btnPreventa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnPreventa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPreventa.ForeColor = System.Drawing.Color.White;
-            this.btnPreventa.Location = new System.Drawing.Point(321, 101);
-            this.btnPreventa.Name = "btnPreventa";
-            this.btnPreventa.Size = new System.Drawing.Size(123, 32);
-            this.btnPreventa.TabIndex = 52;
-            this.btnPreventa.Text = "Preventa";
-            this.btnPreventa.UseVisualStyleBackColor = false;
-            this.btnPreventa.Click += new System.EventHandler(this.btnPreventa_Click);
-            // 
-            // btnAnular
-            // 
-            this.btnAnular.BackColor = System.Drawing.Color.Indigo;
-            this.btnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnular.ForeColor = System.Drawing.Color.White;
-            this.btnAnular.Location = new System.Drawing.Point(450, 101);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(123, 32);
-            this.btnAnular.TabIndex = 53;
-            this.btnAnular.Text = "Anular";
-            this.btnAnular.UseVisualStyleBackColor = false;
-            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
+            this.btnCancelar.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(450, 97);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(123, 35);
+            this.btnCancelar.TabIndex = 59;
+            this.btnCancelar.Text = "Limpiar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGenerarOrdenPedido
             // 
             this.btnGenerarOrdenPedido.BackColor = System.Drawing.Color.Crimson;
             this.btnGenerarOrdenPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarOrdenPedido.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarOrdenPedido.Location = new System.Drawing.Point(192, 101);
+            this.btnGenerarOrdenPedido.Location = new System.Drawing.Point(321, 98);
             this.btnGenerarOrdenPedido.Name = "btnGenerarOrdenPedido";
             this.btnGenerarOrdenPedido.Size = new System.Drawing.Size(123, 32);
             this.btnGenerarOrdenPedido.TabIndex = 50;
@@ -432,7 +413,7 @@ namespace AppBogedaTeo.Vistas
             this.btnRetirarProducto.BackColor = System.Drawing.Color.DarkMagenta;
             this.btnRetirarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetirarProducto.ForeColor = System.Drawing.Color.White;
-            this.btnRetirarProducto.Location = new System.Drawing.Point(413, 224);
+            this.btnRetirarProducto.Location = new System.Drawing.Point(413, 228);
             this.btnRetirarProducto.Name = "btnRetirarProducto";
             this.btnRetirarProducto.Size = new System.Drawing.Size(162, 34);
             this.btnRetirarProducto.TabIndex = 46;
@@ -484,49 +465,28 @@ namespace AppBogedaTeo.Vistas
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(27, 116);
+            this.label5.Location = new System.Drawing.Point(29, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 24);
             this.label5.TabIndex = 43;
             this.label5.Text = "DNI:";
             // 
-            // txtNroOrdPOP
-            // 
-            this.txtNroOrdPOP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNroOrdPOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNroOrdPOP.Location = new System.Drawing.Point(241, 76);
-            this.txtNroOrdPOP.Name = "txtNroOrdPOP";
-            this.txtNroOrdPOP.ReadOnly = true;
-            this.txtNroOrdPOP.Size = new System.Drawing.Size(332, 24);
-            this.txtNroOrdPOP.TabIndex = 48;
-            // 
             // txtNroDocOP
             // 
             this.txtNroDocOP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNroDocOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNroDocOP.Location = new System.Drawing.Point(241, 118);
+            this.txtNroDocOP.Location = new System.Drawing.Point(243, 104);
             this.txtNroDocOP.Name = "txtNroDocOP";
             this.txtNroDocOP.ReadOnly = true;
             this.txtNroDocOP.Size = new System.Drawing.Size(332, 24);
             this.txtNroDocOP.TabIndex = 44;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(27, 74);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(197, 24);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "Nro. Orden de Pedido";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(27, 158);
+            this.label6.Location = new System.Drawing.Point(29, 144);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 24);
             this.label6.TabIndex = 45;
@@ -536,7 +496,7 @@ namespace AppBogedaTeo.Vistas
             // 
             this.txtRazonSocialOP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRazonSocialOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazonSocialOP.Location = new System.Drawing.Point(241, 160);
+            this.txtRazonSocialOP.Location = new System.Drawing.Point(243, 146);
             this.txtRazonSocialOP.Name = "txtRazonSocialOP";
             this.txtRazonSocialOP.ReadOnly = true;
             this.txtRazonSocialOP.Size = new System.Drawing.Size(332, 24);
@@ -594,8 +554,6 @@ namespace AppBogedaTeo.Vistas
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNroDocOP;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtNroOrdPOP;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvDetOP;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnRetirarProducto;
@@ -605,11 +563,10 @@ namespace AppBogedaTeo.Vistas
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btnPreventa;
-        private System.Windows.Forms.Button btnAnular;
         private System.Windows.Forms.Panel panelDet;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

@@ -15,6 +15,9 @@ namespace AppBogedaTeo.Vistas
         private static frmReportesVentas _instance = null;
         private BindingSource bsVentas;
         private VentasRepositorio repoVentas;
+        private OrdenPedidoRepositorio repoOrdenPedido;
+
+        private BindingSource bsDetVentas;
         private ParametroRepositorio repoParametro;
         private BindingSource bsMetodoPago;
         private List<Parametro> listMetodoPago;
@@ -28,10 +31,13 @@ namespace AppBogedaTeo.Vistas
             ventasFiltro = new VentasBusDTO();
             bsMetodoPago = new BindingSource();
             listMetodoPago = new List<Parametro>();
-           
+            
+            bsDetVentas = new BindingSource();
 
             repoVentas = new VentasRepositorio(cadenaConexion);
             repoParametro = new ParametroRepositorio(cadenaConexion);
+            repoOrdenPedido = new OrdenPedidoRepositorio(cadenaConexion);
+
             CargarCombo("MetodoPago", cmbMetodoPago, bsMetodoPago, listMetodoPago);
             ValidacionesEventos();
             EstablecerFechas();
@@ -49,6 +55,8 @@ namespace AppBogedaTeo.Vistas
             }
             else
                 _instance.BringToFront();
+
+            _instance.LimpiarCampos();
 
             return _instance;
         }
@@ -213,7 +221,6 @@ namespace AppBogedaTeo.Vistas
                                               "MÉTODO DE PAGO",
                                               "ESTADO",
                                               "FECHA CREACIÓN",
-                                              "FECHA LIMITE DE PAGO",
                                               "IMPORTE TOTAL" };
 
 
@@ -281,6 +288,83 @@ namespace AppBogedaTeo.Vistas
                 Alerta.Notificacion("Ocurrio un error al generar el PDF : " + ex.Message, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void btnSeleccion_Click(object sender, EventArgs e)
+        {
+            if (bsVentas != null && bsVentas.Count > 0)
+            {
+                try
+                {
+                    VentasDTO item = (VentasDTO)bsVentas.Current;
+
+                    PanelMant();
+
+                    //Pintar datos de orden de pedido
+                    txtDetCodVenta.Text = item.Cod_Venta.ToString();
+                    txtDetNroDoc.Text = item.Nro_Doc.ToString();
+                    txtDetNomCompletos.Text = item.NombresCompletos.ToString();
+                    txtDetFechaCreacion.Text = item.FechaCreacion;
+                    //txtDetFechaLimite.Text = item.FechaLimitePago;
+                    txtDetEstado.Text = item.DscEstado;
+                    txtDetImporte.Text = item.ImporteTotal.ToString();
+
+                    txtDetTipoComprobante.Text = item.DscTipoComp;
+                    txtDetMetodoPago.Text = item.DscMetodoPago;
+                    //txtSumImp.Text = item.ImporteTotal.ToString();
+
+
+
+                    List<DetOrdenPedido> listDetOP = repoOrdenPedido.ObtenerDetOrdenPedido(item.Nro_Orden);
+                    bsDetVentas.DataSource = listDetOP;
+                    dgvDetVentas.DataSource = bsDetVentas;
+
+                }
+                catch (Exception ex)
+                {
+                    Alerta.Notificacion("Error al seleccionar la venta:\n" + ex.Message, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                Alerta.Notificacion("¡No hay registros seleccionados!", MessageBoxIcon.Warning);
+            }
+        }
+
+        private void PanelMant()
+        {
+            panelBus.Visible = false;
+            panelDetalle.Visible = true;
+        }
+
+        private void LimpiarCampos()
+        {
+
+            //Búsqueda
+            txtNroDoc.Text = "";
+            txtCliente.Text = "";
+
+            //Detalle
+            txtDetCodVenta.Text = "";
+            txtDetNroDoc.Text = "";
+            txtDetNomCompletos.Text = "";
+
+            txtDetFechaCreacion.Text = "";
+            //txtDetFechaLimite.Text = "";
+            //txtSumImp.Text = "0";
+            bsVentas.DataSource = null;
+            dgvOrdenPedido.DataSource = null;
+            dgvDetVentas.DataSource = null;
+
+            panelBus.Visible = true;
+            panelBus.Dock = DockStyle.Fill;
+            panelDetalle.Visible = false;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
         }
     }
 }

@@ -24,10 +24,7 @@ namespace AppBogedaTeo.Repositorio
                 {
                     DynamicParameters prm = new DynamicParameters();
                     prm.Add("@Descripcion", req.Descripcion);
-                    prm.Add("@CodProductoCategoria", req.CodProductoCategoria);
-                    prm.Add("@CodProveedor", req.CodProveedor);
-                    prm.Add("@FMod", req.FMod);
-
+                
                     resultado =con.Query<T>("Usp_BuscarProducto", prm, commandType: CommandType.StoredProcedure).ToList();
                 }
             }

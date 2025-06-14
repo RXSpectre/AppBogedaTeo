@@ -28,7 +28,7 @@ namespace AppBogedaTeo.Repositorio
                     DynamicParameters prm = new DynamicParameters();
                     prm.Add("@Nro_Orden", req.Nro_Orden);
                     prm.Add("@ImporteTotal", req.ImporteTotal);
-                    prm.Add("@Tipo_Comp", req.Tipo_Comp);
+                    prm.Add("@CodMetodoPago", req.CodMetodoPago);
                     prm.Add("@CodEmpleado", req.CodEmpleado);
                     resultado = con.Query<RespuestaDTO>("Usp_GenVentas", prm, commandType: CommandType.StoredProcedure).FirstOrDefault();
                 }

@@ -47,8 +47,8 @@ namespace AppBogedaTeo.DTO
 
         [DisplayName("Fecha Creación")]
         public string FechaCreacion { get; set; }
-        [DisplayName("Fecha Limite de Pago")]
-        public string FechaLimitePago { get; set; }
+        //[DisplayName("Fecha Limite de Pago")]
+        //public string FechaLimitePago { get; set; }
         [DisplayName("Importe Total")]
         public decimal ImporteTotal { get; set; }
     }

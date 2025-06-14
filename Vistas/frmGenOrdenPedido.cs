@@ -117,9 +117,7 @@ namespace AppBogedaTeo.Vistas
             try
             {
                 productoFiltro.Descripcion = txtBusDescProducto.Text.Trim();
-                //Solo muestra productos con stock disponible
-                productoFiltro.FMod = 2;
-
+               
                 List<ProductoOrdenPedidoDTO> productos = productoRepositorio.BuscarProducto(productoFiltro);
 
                 if (productos.Count == 0)
@@ -174,7 +172,7 @@ namespace AppBogedaTeo.Vistas
             dgvClientes.DataSource = null;
 
             dgvDetOP.DataSource = null;
-            txtNroOrdPOP.Text = "";
+            
            
 
         }
@@ -189,12 +187,6 @@ namespace AppBogedaTeo.Vistas
 
                     int cantidad = 0;
 
-
-                    if (!String.IsNullOrEmpty(txtNroOrdPOP.Text))
-                    {
-                        Alerta.Notificacion("No se puede agregar , ya que la orden de pedido esta generada", MessageBoxIcon.Warning);
-                        return;
-                    }
 
                     if (!Int32.TryParse(txtCantidad.Text, out cantidad))
                     {
@@ -250,19 +242,10 @@ namespace AppBogedaTeo.Vistas
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            bool rpta=Alerta.Confirmacion("¡Estás seguro que deseas cancelar la generación de la orden de pedido?");
-            if (rpta)
-                LimpiarCampos();
-        }
-
+     
         private void btnRetirarProducto_Click(object sender, EventArgs e)
         {
-            if (txtNroOrdPOP.Text.Length > 0) {
-                Alerta.Notificacion("No se puede retirar el producto ya que se creo la orden de pedido Nro.: "+ txtNroOrdPOP.Text, MessageBoxIcon.Warning);
-                return;
-            }
+           
 
             if (bslistDetOP != null && bslistDetOP.Count > 0)
             {
@@ -285,8 +268,6 @@ namespace AppBogedaTeo.Vistas
 
                     Alerta.Notificacion(ex.Message, MessageBoxIcon.Error);
                 }
-                
-
             }
             else
             {
@@ -297,9 +278,6 @@ namespace AppBogedaTeo.Vistas
         private void btnGenerarOrdenPedido_Click(object sender, EventArgs e)
         {
             string msg = "";
-
-            if (!String.IsNullOrEmpty(txtNroOrdPOP.Text))
-                msg += "*No se puede generar un orden de pedido,favor de cambiar el estado a preventa o anule la orden \n";
 
             if (txtNroDocOP.Text.Length == 0)
                 msg += "*Tiene que haber seleccionado un cliente\n";
@@ -339,18 +317,13 @@ namespace AppBogedaTeo.Vistas
                         throw new Exception(response.MsgRespuesta);
                 }
 
-                Alerta.Notificacion("Se registro la Orden de Pedido Nro: "+ NroOrden+".\n" +
-                    "Favor de cambiar el estado a preventa para seguir con el flujo de cobranza" , MessageBoxIcon.Information);
-
-                txtNroOrdPOP.Text = NroOrden.ToString();
-
+                Alerta.Notificacion("Se registro la Orden de Pedido Nro: "+ NroOrden+".\n" + "Favor de cancelar en caja", MessageBoxIcon.Information);
+                LimpiarCampos();
             }
-            catch (Exception ex)
+            catch
             {
-
-                Alerta.Notificacion("Ocurrio un error al generar la orden de pedido :\n"+ ex.Message, MessageBoxIcon.Error);
+                Alerta.Notificacion("Ocurrio un error al generar la orden de pedido", MessageBoxIcon.Error);
             }
-
         }
 
         private void CalcularTotales() {
@@ -359,92 +332,9 @@ namespace AppBogedaTeo.Vistas
 
         }
 
-        private void btnPreventa_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (txtNroOrdPOP.Text.Length == 0)
-            {
-                Alerta.Notificacion("No hay un Nro. de orden de pedido que se haya generado", MessageBoxIcon.Warning);
-                return;
-            }
-
-            var rpta= Alerta.Confirmacion("¿Estás seguro que deseas cambiar el estado? ,ten en cuenta que esta acción luego no se podra modificar ");
-
-            if (!rpta)
-                return;
-
-            RespuestaDTO response = new RespuestaDTO();
-
-            try
-            {
-                response = repoOrdenPedido.MantOrdenPedido(new OrdenPedidoMantDTO()
-                {
-                    Nro_Orden = Convert.ToInt32(txtNroOrdPOP.Text.Trim()),
-                    CodEstadoOrdenPedido = 2,
-                    Fmant = 2
-
-                });
-
-
-                if (response.CodRes == 0) {
-                    Alerta.Notificacion(response.MsgRespuesta, MessageBoxIcon.Warning);
-                    return;
-                }
-                    
-                Alerta.Notificacion(response.MsgRespuesta, MessageBoxIcon.Information);
-                LimpiarCampos();
-            }
-            catch (Exception ex)
-            {
-
-                Alerta.Notificacion("Ocurrio un error al cambiar el estado a preventa:\n"+ ex.Message , MessageBoxIcon.Error);
-            }
+            LimpiarCampos();
         }
-
-
-
-        private void btnAnular_Click(object sender, EventArgs e)
-        {
-            if (txtNroOrdPOP.Text.Length == 0)
-            {
-                Alerta.Notificacion("No hay un Nro. de orden de pedido que se haya generado", MessageBoxIcon.Warning);
-                return;
-            }
-
-            var rpta = Alerta.Confirmacion("¿Estás seguro que deseas cambiar el estado? ,ten en cuenta que esta acción luego no se podra modificar ");
-
-            if (!rpta)
-                return;
-
-            RespuestaDTO response = new RespuestaDTO();
-
-            try
-            {
-                response = repoOrdenPedido.MantOrdenPedido(new OrdenPedidoMantDTO()
-                {
-                    Nro_Orden = Convert.ToInt32(txtNroOrdPOP.Text.Trim()),
-                    CodEstadoOrdenPedido = 3,
-                    Fmant = 2,
-                    CodEmpleadoModi = codEmpleado
-
-                });
-
-                if (response.CodRes == 0)
-                {
-                    Alerta.Notificacion(response.MsgRespuesta, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                Alerta.Notificacion(response.MsgRespuesta, MessageBoxIcon.Information);
-                LimpiarCampos();
-            }
-            catch (Exception ex)
-            {
-
-                Alerta.Notificacion("Ocurrio un error al anular el orden de pedido:\n"+ex.Message, MessageBoxIcon.Error);
-            }
-        }
-
-
-    
     }
 }

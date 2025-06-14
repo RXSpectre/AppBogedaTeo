@@ -155,7 +155,7 @@ namespace AppBogedaTeo
             txtDetNomCompletos.Text = "";
 
             txtDetFechaCreacion.Text = "";
-            txtDetFechaLimite.Text = "";
+            //txtDetFechaLimite.Text = "";
             //txtSumImp.Text = "0";
             bsVentas.DataSource = null;
             dgvOrdenPedido.DataSource = null;
@@ -188,7 +188,7 @@ namespace AppBogedaTeo
                     txtDetNroDoc.Text = item.Nro_Doc.ToString();
                     txtDetNomCompletos.Text = item.NombresCompletos.ToString();
                     txtDetFechaCreacion.Text = item.FechaCreacion;
-                    txtDetFechaLimite.Text = item.FechaLimitePago;
+                    //txtDetFechaLimite.Text = item.FechaLimitePago;
                     txtDetEstado.Text = item.DscEstado;
                     txtDetImporte.Text = item.ImporteTotal.ToString();
 

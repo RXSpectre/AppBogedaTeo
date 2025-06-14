@@ -134,7 +134,7 @@ namespace AppBogedaTeo.Util
                     header.Cell().Element(EstiloCelda).Text("MÉTODO DE PAGO");
                     header.Cell().Element(EstiloCelda).Text("ESTADO");
                     header.Cell().Element(EstiloCelda).Text("F. CREACIÓN");
-                    header.Cell().Element(EstiloCelda).Text("F. LIMITE DE\nPAGO");
+                    //header.Cell().Element(EstiloCelda).Text("F. LIMITE DE\nPAGO");
                     header.Cell().Element(EstiloCelda).Text("TOTAL");
 
                     IContainer EstiloCelda(IContainer container1)
@@ -156,7 +156,7 @@ namespace AppBogedaTeo.Util
                     table.Cell().Element(EstiloCelda).Text(item.DscMetodoPago);
                     table.Cell().Element(EstiloCelda).Text(item.DscEstado);
                     table.Cell().Element(EstiloCelda).Text(item.FechaCreacion);
-                    table.Cell().Element(EstiloCelda).Text(item.FechaLimitePago);
+                    //table.Cell().Element(EstiloCelda).Text(item.FechaLimitePago);
                     table.Cell().Element(EstiloCelda).Text($"{item.ImporteTotal:N}");
 
 

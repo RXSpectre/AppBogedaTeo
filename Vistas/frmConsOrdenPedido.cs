@@ -195,15 +195,10 @@ namespace AppBogedaTeo.Vistas
         }
 
 
-        private void PanelMant(int codEstadoOP)
+        private void PanelMant()
         {
             panelBus.Visible = false;
             panelDetalle.Visible = true;
-
-            if (codEstadoOP == 1) //Estado :Generado
-                panelAcciones.Visible = true;
-            else
-                panelAcciones.Visible = false;
         }
 
         private void btnSeleccion_Click(object sender, EventArgs e)
@@ -214,7 +209,7 @@ namespace AppBogedaTeo.Vistas
                 {
                     OrdenPedidoDTO item = (OrdenPedidoDTO)bsOrdenPedido.Current;
 
-                    PanelMant(item.CodEstadoOrdenPedido);
+                    PanelMant();
 
                     //Pintar datos de orden de pedido
                     txtDetNroOrdenPedido.Text = item.Nro_Orden.ToString();

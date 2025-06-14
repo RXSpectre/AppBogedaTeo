@@ -16,8 +16,8 @@ namespace AppBogedaTeo.DTO
         public string NombresCompletos { get; set; }
 
 
-        [DisplayName("Fecha Limite de Pago")]
-        public string FechaLimitePago { get; set; }
+        //[DisplayName("Fecha Limite de Pago")]
+        //public string FechaLimitePago { get; set; }
 
         [Browsable(false)]
         public int CodEstadoOrdenPedido { get; set; }

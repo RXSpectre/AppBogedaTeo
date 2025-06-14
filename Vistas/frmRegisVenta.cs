@@ -22,8 +22,8 @@ namespace AppBogedaTeo.Vistas
         private List<DetOrdenPedido> listDetOP;
         private BindingSource bslistDetOP;
 
-        private List<Parametro> listTipoCompro;
-        private BindingSource bsTipoCompro;
+        private List<Parametro> listMetodoPago;
+        private BindingSource bsMetodoPago;
 
         public int  codEmpleado { get; set; }
 
@@ -39,11 +39,12 @@ namespace AppBogedaTeo.Vistas
 
             listDetOP = new List<DetOrdenPedido>();
             bslistDetOP = new BindingSource();
-            listTipoCompro = new List<Parametro>();
-            bsTipoCompro = new BindingSource();
+            listMetodoPago = new List<Parametro>();
+            bsMetodoPago = new BindingSource();
 
             BuscarOrdenPedido();
             ValidacionesEventos();
+            CargarCombo("MetodoPago", cmbMetodoPago , bsMetodoPago, listMetodoPago, 1);
         }
 
 
@@ -89,7 +90,6 @@ namespace AppBogedaTeo.Vistas
             //Panel Mantenimiento
             txtImpTotalOP.Text = "";
            
-            CargarCombo("TipoComprobante", cmbTipoComprobante, bsTipoCompro, listTipoCompro);
             listDetOP.Clear();
             dgvDetOP.DataSource = null;
 
@@ -216,13 +216,12 @@ namespace AppBogedaTeo.Vistas
             RespuestaDTO response = new RespuestaDTO();
             try
             {
-
                 response = repoVentas.GenVentas(new VentasMantDTO()
                 {
                     Nro_Orden = Convert.ToInt32(txtNroOrdPOP.Text),
                     ImporteTotal = Convert.ToDecimal(txtImpTotalOP.Text),
-                    Tipo_Comp = Convert.ToInt32(cmbTipoComprobante.SelectedValue),
-                    CodEmpleado = codEmpleado
+                    CodEmpleado = codEmpleado,
+                    CodMetodoPago = ((Parametro)bsMetodoPago.Current).Codigo
                 }) ;
 
                 if (response.CodRes == 0) {
@@ -244,6 +243,43 @@ namespace AppBogedaTeo.Vistas
             }
             
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+          
+            var rpta = Alerta.Confirmacion("¿Estás seguro que deseas anular la orden de pedido?");
+
+            if (!rpta)
+                return;
+
+            RespuestaDTO response = new RespuestaDTO();
+
+            try
+            {
+                response = repoOrdenPedido.MantOrdenPedido(new OrdenPedidoMantDTO()
+                {
+                    Nro_Orden = Convert.ToInt32(txtNroOrdPOP.Text.Trim()),
+                    CodEstadoOrdenPedido = 2,
+                    Fmant = 2,
+                    CodEmpleadoModi = codEmpleado
+
+                });
+
+                if (response.CodRes == 0)
+                {
+                    Alerta.Notificacion(response.MsgRespuesta, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                Alerta.Notificacion(response.MsgRespuesta, MessageBoxIcon.Information);
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+
+                Alerta.Notificacion("Ocurrio un error al anular el orden de pedido:\n" + ex.Message, MessageBoxIcon.Error);
+            }
         }
     }
 }
