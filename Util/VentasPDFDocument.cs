@@ -67,20 +67,19 @@ namespace AppBogedaTeo.Util
                 //Paso 1 Definiendo las columnas
                 table.ColumnsDefinition(columns =>
                 {
-                    columns.RelativeColumn();
-                    columns.RelativeColumn();
-                    columns.RelativeColumn();
-                
+                    
+                    columns.RelativeColumn(8f);
+                    columns.RelativeColumn(7f);
+                    columns.RelativeColumn(2f);
                 });
 
                 //Paso 2 Definiendo las cabeceras
                 float tamanioLetra = 0.6f;
                 table.Header(header =>
                 {
-                    header.Cell().Element(EstiloCelda).Text("MÉTODO DE PAGO");
-                    header.Cell().Element(EstiloCelda).Text("CANTIDAD");
-                    header.Cell().Element(EstiloCelda).Text("TOTALES");
-                 
+                    header.Cell().Element(EstiloCelda).Text("MÉTODO DE PAGO").AlignCenter();
+                    header.Cell().Element(EstiloCelda).Text("CANTIDAD").AlignCenter();
+                    header.Cell().Element(EstiloCelda).Text("TOTALES").AlignCenter();
 
                     IContainer EstiloCelda(IContainer container1)
                     {
@@ -93,9 +92,9 @@ namespace AppBogedaTeo.Util
                 //Paso 3 definiendo los datos
                 foreach (var item in data.resumen)
                 {
-                    table.Cell().Element(EstiloCelda).Text(item.Descripcion);
-                    table.Cell().Element(EstiloCelda).Text(item.Cantidad.ToString());
-                    table.Cell().Element(EstiloCelda).Text(item.ImporteTotal.ToString());
+                    table.Cell().Element(EstiloCelda).Text(item.Descripcion).AlignCenter();
+                    table.Cell().Element(EstiloCelda).Text(item.Cantidad.ToString()).AlignCenter();
+                    table.Cell().Element(EstiloCelda).Text($"{item.ImporteTotal:N}").AlignCenter();
 
                     IContainer EstiloCelda(IContainer container1)
                     {
@@ -112,11 +111,11 @@ namespace AppBogedaTeo.Util
                 //Paso 1 Definiendo las columnas
                 table.ColumnsDefinition(columns =>
                 {
+                   
                     columns.RelativeColumn(2f);
                     columns.RelativeColumn(2f);
                     columns.RelativeColumn(2f);
-                    columns.RelativeColumn(2f);
-                    columns.RelativeColumn(2f);
+                    columns.RelativeColumn(3f);
                     columns.RelativeColumn(2f);
                     columns.RelativeColumn(2f);
                     columns.RelativeColumn(2f);
@@ -127,15 +126,15 @@ namespace AppBogedaTeo.Util
                 float tamanioLetra = 0.6f;
                 table.Header(header =>
                 {
-                    header.Cell().Element(EstiloCelda).Text("COD. VENTA");
-                    header.Cell().Element(EstiloCelda).Text("TIPO DE COMPROBANTE");
-                    header.Cell().Element(EstiloCelda).Text("DNI");
-                    header.Cell().Element(EstiloCelda).Text("CLIENTE");
-                    header.Cell().Element(EstiloCelda).Text("MÉTODO DE PAGO");
-                    header.Cell().Element(EstiloCelda).Text("ESTADO");
-                    header.Cell().Element(EstiloCelda).Text("F. CREACIÓN");
+                    header.Cell().Element(EstiloCelda).Text("COD. VENTA").AlignCenter();
+                    header.Cell().Element(EstiloCelda).Text("TIPO DE COMPROBANTE").AlignCenter();
+                    header.Cell().Element(EstiloCelda).Text("DNI").AlignCenter();
+                    header.Cell().Element(EstiloCelda).Text("CLIENTE").AlignCenter();
+                    header.Cell().Element(EstiloCelda).Text("MÉTODO DE PAGO").AlignCenter();
+                    header.Cell().Element(EstiloCelda).Text("ESTADO").AlignCenter();
+                    header.Cell().Element(EstiloCelda).Text("F. CREACIÓN").AlignCenter();
                     //header.Cell().Element(EstiloCelda).Text("F. LIMITE DE\nPAGO");
-                    header.Cell().Element(EstiloCelda).Text("TOTAL");
+                    header.Cell().Element(EstiloCelda).Text("TOTAL").AlignCenter();
 
                     IContainer EstiloCelda(IContainer container1)
                     {
@@ -149,15 +148,15 @@ namespace AppBogedaTeo.Util
                 foreach (var item in data.data)
                 {
 
-                    table.Cell().Element(EstiloCelda).Text(item.Cod_Venta.ToString());
-                    table.Cell().Element(EstiloCelda).Text(item.DscTipoComp);
-                    table.Cell().Element(EstiloCelda).Text(item.Nro_Doc);
-                    table.Cell().Element(EstiloCelda).Text(item.NombresCompletos);
-                    table.Cell().Element(EstiloCelda).Text(item.DscMetodoPago);
-                    table.Cell().Element(EstiloCelda).Text(item.DscEstado);
-                    table.Cell().Element(EstiloCelda).Text(item.FechaCreacion);
+                    table.Cell().Element(EstiloCelda).Text(item.Cod_Venta.ToString()).AlignCenter();
+                    table.Cell().Element(EstiloCelda).Text(item.DscTipoComp).AlignCenter();
+                    table.Cell().Element(EstiloCelda).Text(item.Nro_Doc).AlignCenter();
+                    table.Cell().Element(EstiloCelda).Text(item.NombresCompletos).AlignCenter();
+                    table.Cell().Element(EstiloCelda).Text(item.DscMetodoPago).AlignCenter();
+                    table.Cell().Element(EstiloCelda).Text(item.DscEstado).AlignCenter();
+                    table.Cell().Element(EstiloCelda).Text(item.FechaCreacion).AlignCenter();
                     //table.Cell().Element(EstiloCelda).Text(item.FechaLimitePago);
-                    table.Cell().Element(EstiloCelda).Text($"{item.ImporteTotal:N}");
+                    table.Cell().Element(EstiloCelda).Text($"{item.ImporteTotal:N}").AlignCenter();
 
 
                     IContainer EstiloCelda(IContainer container1)

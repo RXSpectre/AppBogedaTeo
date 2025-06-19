@@ -273,7 +273,10 @@ namespace AppBogedaTeo.Vistas
                 }
 
                 Alerta.Notificacion(response.MsgRespuesta, MessageBoxIcon.Information);
+               
                 LimpiarCampos();
+                BuscarOrdenPedido();
+                PanelPrincipal();
             }
             catch (Exception ex)
             {
